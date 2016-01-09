@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Genres</title>
+  </head>
+  <body>
+    <h1>All Genres</h1>
+
+    <%@genres.each.with_index(1) do |genre, index| %>
+      <p><%= "#{index}." %> <%= genre.name %> - <%= genre.movies.name%></p>
+    <%end  %>
+
+    <a class="button" href="movies/new">Create new movie here</a><br>
+    <!-- <a class="button" href="genres/new">Create new genre here</a><br> -->
+    <a class="button" href="studios"> View Studios</a><br>
+    <a class="button" href="/movies"> View Movies</a>
+  </body>
+</html>

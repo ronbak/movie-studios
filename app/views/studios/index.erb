@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Studios</title>
+  </head>
+  <body>
+    <h1>All Studios</h1>
+    <table>
+      <th>
+        <tr>Studio Id </tr>
+        <tr> Studio name</tr>
+      </th>
+    </table>
+
+    <tr>
+    <% Studio.all.each do |studio| %>
+      <td> <%= studio.id %> - <%= studio.name %></td><br>
+    <% end %>
+  </tr>
+
+    <a class="button" href="studios/new">Create new studio here</a><br>
+    <a class="button" href="/movies"> View Movies</a>
+
+  </body>
+</html>

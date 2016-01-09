@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add New Genre</title>
+  </head>
+  <body>
+    <h1>Create a New Genre</h1>
+
+    <form action="/genres" method="post">
+      <h3><label>Genre Name: <input id="genre_name" type="text" name="genre[name]"></input></label></h3>
+
+      <h3><label>Choose the movie for this genre (select only one): </label>
+        <% Movie.all.each do |movie| %>
+          <input type="checkbox" name="movie[movie_id][]" value="<%=movie.id%>"> <%=movie.name%></input>
+        <% end %></h3><br></br>
+
+        <h3><label>Create a new Movie: </label></h3>
+
+        <h3><label>Movie Name: <input id="movie_name" type="text" name="movie[name]"></input></label></h3>
+        <h3><label>Movie Description: <input id="movie_description" type="text" name="movie[description]"></input></label></h3>
+        <h3><label>Movie Studio: <input id="movie_studio" type="text" name="studio[name]"></input></label></h3>
+
+          <br></br>
+      <p><input id="Create New Genre" type="submit" value="Create"></input></p>
+    </form>
+  </body>
+</html>

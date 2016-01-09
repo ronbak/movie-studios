@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Editing movie: <%= @movie.name%></title>
+  </head>
+  <body>
+    <h1>Editing movie: <%= @movie.name%></h1>
+    <form action="/movies/<%= @movie.id%>" method="post">
+      <input type="hidden" name="_method" value="PATCH">
+      <h3><label> Movie Name: </label></h3>
+      <input id="movie_name" type="text" name="movie[name]" value="<%=@movie.name%>">
+
+      <h3><label> Movie Description: </label></h3>
+      <input id="movie_description" type="text" name="movie[description]" value="<%=@movie.description%>">
+
+      <h3><label> Movie Studio: </label></h3>
+      <input id="studio_name" type="text" name="studio[name]" value="<%=@movie.studio.name%>">
+
+      <h3><label> Movie Genre: </label></h3>
+      <% Genre.all.each do |genre| %>
+      <label><%=genre.name%></label>
+        <input id="<%=genre.name%>" type="checkbox" name="movie[genre_ids][]" value="<%=genre.id%>" <%="checked" if @movie.genres.include?(genre)%>></input>
+      <% end %>
+      <br></br>
+      <input id="save" type="submit" value="save">
+    </form>
+
+    <p>
+      <h1>This will delete the movie from the system!!</h1>
+      <form action="/movies/<%=@movie.id%>/delete" method="post">
+        <input id="delete" type="submit" value="delete"></input>
+      </form>
+    </p>
+  </body>
+</html>

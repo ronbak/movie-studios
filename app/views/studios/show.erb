@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= @studio.name%></title>
+  </head>
+  <body>
+    <h1>Successfully created the Studio</h1>
+
+    <h1> Studio Name: <%= @studio.name %> </h1>
+
+    <h2><% @studio.movies.each do |movie| %>
+      Movie Genre: <%= movie.name %>
+      Movie Description: <%= movie.description %>
+      <% end %> </h2>
+
+    <a class="button" href="studios/:id/edit">Edit this Studio</a><br>
+    <a class="button" href="/movies"> View all Movies</a>
+    <a class="button" href="/studios"> View all Studios</a>
+
+  </body>
+</html>

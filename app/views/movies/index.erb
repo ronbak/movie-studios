@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movies</title>
+  </head>
+  <body>
+    <h1>All movies</h1>
+
+    <%Movie.all.each.with_index(1) do |movie, index| %>
+      <p><%= "#{movie.id}." %> <%= movie.name %> - <%= movie.description%></p>
+    <%end  %>
+
+    <a class="button" href="movies/new">Create new movie here</a><br>
+    <a class="button" href="studios"> View Studios</a><br>
+    <a class="button" href="genres"> View Genres</a>
+    <%  %>
+    <!-- <a class="button" href="movies/:id/edit"> Edit a movie</a> -->
+  </body>
+</html>

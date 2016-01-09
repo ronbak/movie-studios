@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> <%= @genre.name %> </title>
+  </head>
+  <body>
+    <h3> Genre Name: <%= @genre.name %> </h3>
+    <h3>Movie Name: <%= @genre.movies.name %> </h3>
+
+    <h4> Common movies under same Genre: </h4>
+
+    <h5><% @genre.movies.each do |movie| %>
+         <li><%= movie.name %></li>
+      <% end %> </h5>
+
+
+    <a class="button" href="/genres/<%=@genre.id%>/edit">Edit this Genre</a><br>
+    <a class="button" href="/"> View all Genres</a><br>
+
+  </body>
+</html>

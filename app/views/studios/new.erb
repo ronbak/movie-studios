@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add New Studio</title>
+  </head>
+  <body>
+    <h1>Create new studio</h1>
+
+    <form action="/studios" method="post">
+
+      <h3><label>Studio Name: <input id="movie_name" type="text" name="studio[name]"></input></label></h3>
+    <h3><label>Choose an Existing Movie: </label>
+    <% Movie.all.each do |movie| %>
+        <input type="checkbox" name="studio[movie_ids][]" value="<%=movie.id%>"> <%=movie.name%></input>
+      <% end %></h3><br>
+
+      <h3><label>Create a new movie: </label></h3>
+        <h3>Movie Name: <input id="movie_name" type="text" name="movie[name]"></input>
+        <label>Movie Description: <input id="movie_description" type="text" name="movie[description]"></input></label></h3>
+        <br></br>
+
+      <!-- <h3><label>Choose an Existing Genre: </label>
+        <% Genre.all.each do |genre| %>
+          <input type="checkbox" name="movie[genre_ids][]" value="<%=genre.id%>"> <%=genre.name%></input>
+        <% end %></h3><br>
+
+        <h3><label>Create a new Genre: </label></h3>
+          Genre Name: <input id="genre_name" type="text" name="genre[name]"></input>
+          <br></br> -->
+      <p><input id="Create New Studio" type="submit" value="Create"></input></p>
+    </form>
+  </body>
+</html>

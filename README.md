@@ -1,1 +1,1 @@
-Studio Sinatra App 
+Movie-Studios Sinatra Application. 

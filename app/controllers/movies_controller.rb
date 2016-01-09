@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
 
   get "/movies/:id" do
     @movie = Movie.find(params[:id])
-    binding.pry
+    # binding.pry
     erb :"movies/show"
   end
 

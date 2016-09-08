@@ -15,7 +15,7 @@ class StudiosController < ApplicationController
     # binding.pry
     @studio.movies = Movie.find_or_create_by(name: params[:movie][:name], description: params[:movie][:description])
     @studio.save
-    erb :"/studios/show", locals: {message: "Succesfully created Studio."}
+    erb :"/studios/show", locals: {message: "Successfully created Studio."}
 
   end
 

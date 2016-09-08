@@ -18,7 +18,7 @@ class MoviesController < ApplicationController
     @movie.studio = Studio.find_or_create_by(name: params[:studio][:name])
     @movie.genre_ids = params[:genres]
     @movie.save
-    erb :"movies/new_movie", locals: {message: "Succesfully created movie."}
+    erb :"movies/new_movie", locals: {message: "Successfully created movie."}
   end
 
   get "/movies/:id" do
@@ -37,7 +37,7 @@ class MoviesController < ApplicationController
     @movie.update(params[:movie])
     @movie.studio = Studio.find_or_create_by(name: params[:studio][:name])
     @movie.save
-    erb :"movies/new_movie", locals: {message: "Movie Succesfully updated."}
+    erb :"movies/new_movie", locals: {message: "Movie Successfully updated."}
   end
 
   post "/movies/:id/delete" do
